@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './navbar.module.css';
 import { motion, transform } from "framer-motion";
 import { link } from 'framer-motion/client';
@@ -14,7 +15,10 @@ const links = [
 
 
 const Navbar = () => {
-    const [open, setOpen] = useState()
+    const [open, setOpen] = useState();
+    const [active, setActive] = useState();
+    const path = useLocation().pathname;
+
 
     const topVariants = {
         closed: {
@@ -46,34 +50,36 @@ const Navbar = () => {
 
     const listVariants = {
         closed: {
-          x: "100vw",
+            x: "100vw",
         },
         opened: {
-          x: 0,
-          transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.1,
-          },
+            x: 0,
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.1,
+            },
         },
-      };
+    };
 
-      const listItemVariants = {
+    const listItemVariants = {
         closed: {
-          x: -10,
-          opacity: 0,
+            x: -10,
+            opacity: 0,
         },
         opened: {
-          x: 0,
-          opacity: 1,
+            x: 0,
+            opacity: 1,
         },
-      };
+    };
 
     return (
         <div className={styles.container}>
             {/* LINKS */}
             <div className={styles.links}>
                 {links.map((link) => (
-                    <a href={link.url}>{link.title}</a>
+                    <a href={link.url}
+                    className={path === link.url ? styles.active : ''}
+                    >{link.title}</a>
                 ))}
             </div>
             {/* LOGO */}
@@ -84,10 +90,10 @@ const Navbar = () => {
             </div>
             {/* SOCIAL */}
             <div className={styles.social}>
-                <a href="/"><img src="./facebook.png" alt="" /></a>
-                <a href="/"><img src="./github.png" alt="" /></a>
-                <a href="/"><img src="./instagram.png" alt="" /></a>
-                <a href="/"><img src="linkedin.png" alt="" /></a>
+                <Link to="/"><img src="./facebook.png" alt="" /></Link>
+                <Link to="/"><img src="./github.png" alt="" /></Link>
+                <Link to="/"><img src="./instagram.png" alt="" /></Link>
+                <Link to="/"><img src="linkedin.png" alt="" /></Link>
             </div>
             {/* RESPONSIVE MENU */}
             <div className={styles.responsive} onClick={() => setOpen((prev) => !prev)}>
@@ -108,15 +114,17 @@ const Navbar = () => {
                 </div>
             </div>
             {/* RESPONSIVE MENU LIST */}
-            {open && (<motion.div 
-             variants={listVariants}
-             initial="closed"
-             animate="opened"
-            className={styles.responsiveMenu}>
+            {open && (<motion.div
+                variants={listVariants}
+                initial="closed"
+                animate="opened"
+                className={styles.responsiveMenu}>
                 {links.map((link) => (
-                    <motion.a 
-                    variants={listItemVariants}
-                    href={link.url}>{link.title}</motion.a>
+                    <motion.div variants={listItemVariants}
+                    onClick={() => setOpen((prev) => !prev)}
+                    >
+                        <Link to={link.url}>{link.title}</Link>
+                    </motion.div>
                 ))}
             </motion.div>)}
         </div>

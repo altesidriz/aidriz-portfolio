@@ -1,0 +1,139 @@
+.container {
+    background: transparent;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid orange;
+}
+
+/* LINKS */
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    flex: 1;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+/* LOGO */
+
+.logo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo a{
+    width: 50%;
+    height: 50%;
+}
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+/* SOCIAL */
+
+.social{
+   flex: 1; 
+   height: 100%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* gap: 2rem; */
+}
+
+.social a{
+    height: 30%;
+    width: 10%;
+}
+
+.social img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* RESPONSIVE MENU */
+
+.responsive {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: right;
+    padding-right:15px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.button{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.line {
+    width: 100%;
+    height: 5px;
+    background-color: #000;
+    border-radius: 15px;
+    transform-origin: left;
+}
+
+.responsiveMenu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    background: #000;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    font-size: 2.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive Media Queries */
+
+@media only screen and (max-width: 600px) {
+    .social,
+    .links {
+        display: none;
+    }
+
+    .logo{
+        justify-content: left;
+    }
+
+    .responsive{
+        display: flex;
+    }
+}

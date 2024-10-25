@@ -1,0 +1,157 @@
+.container {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #fff, #fff4db);
+}
+
+
+/* AVATAR */
+.avatar {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.imgBorder {
+    height: 620px;
+    width: 620px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50;
+    left: 50;
+}
+
+.imgBorder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageContainer {
+    height: 500px;
+    max-height: 500px;
+    width: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* TEXT */
+.text {
+    flex: 1;
+    padding: 0 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    text-wrap: pretty;
+}
+
+.title {
+    font-size: 2.8rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+}
+
+.title span {
+    color: #ffa500;
+}
+
+.desc {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 400;
+}
+
+.desc span{
+    font-style: italic;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.buttons button {
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.buttons button:nth-child(2) {
+    background: #fff;
+    color: #000;
+}
+
+.buttons button:hover {
+    color: #ffa500;
+    border: 1px solid #ffa500;
+}
+
+
+/* Responsive Media Queries */
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh-100px);
+    }
+
+    .avatar {
+        flex: 0.5;
+    }
+
+    .imgBorder {
+        height: 250px;
+        width: 250px;
+    }
+
+    .imageContainer {
+        height: 200px;
+        max-height: 200px;
+    }
+
+    .text {
+        height: 80%;
+        flex: 1;
+        justify-content: center;
+        gap: 25px
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    line-height: 1.5rem;
+    }
+
+    .buttons button{
+        padding:5px;
+        font-size: 0.8rem;
+        border-radius: 10px;
+    }
+}

@@ -58,7 +58,6 @@
     flex-direction: column;
     align-items: start;
     justify-content: space-around;
-    text-wrap: pretty;
 }
 
 .title {
@@ -112,46 +111,70 @@
 /* Responsive Media Queries */
 
 @media only screen and (max-width: 600px) {
-    .container {
+    .container{
+        height: calc(100vh - 100px);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: calc(100vh-100px);
     }
+
 
     .avatar {
-        flex: 0.5;
+        flex: 0.7;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
-
+    
     .imgBorder {
-        height: 250px;
-        width: 250px;
-    }
-
-    .imageContainer {
         height: 200px;
-        max-height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50;
+        left: 50;
+    }
+    
+    .imgBorder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .imageContainer {
+        height: 165px;
+        width: 165px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    
+    .imageContainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     .text {
-        height: 80%;
-        flex: 1;
-        justify-content: center;
-        gap: 25px
+        flex: 1.3;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
     }
 
     .title {
         font-size: 1.5rem;
+        line-height: 1;
     }
-
-    .desc {
-        font-size: 1rem;
-    line-height: 1.5rem;
-    }
-
-    .buttons button{
-        padding:5px;
+    .desc{
         font-size: 0.8rem;
-        border-radius: 10px;
+        line-height: 1.5;
+    }
+    .buttons button{
+        padding: 5px 10px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .buttons a{
+        font-size: 0.8rem;
     }
 }

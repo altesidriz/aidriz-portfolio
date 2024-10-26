@@ -1,34 +1,81 @@
-.container {
-    width: 100vw;
+.contact {
     height: calc(100vh - 100px);
+    width: 100vw;
     display: flex;
-    align-items: end;
-    justify-content: center;
-    position: relative;
+    align-items: center;
+    justify-content: space-around;
     background-image: linear-gradient(to bottom, #fff, #fff4db);
 }
 
-.envClosed{
-    height: 50vh;
-    width: 100vh;
-    position: absolute;
-}
-
-.envOpened{
-    height: 70vh;
-    width: 100vh;
-    position: absolute;
-    opacity: 0.5;
-}
-
-.envClosed img {
-    width: 100%;
+.textContainer {
     height: 100%;
-    object-fit:fill;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
-.envOpened img {
-    width: 100%;
+.textContainer h1{
+    font-size: 3.6rem;
+    padding-left: 150px;
+}
+
+.item h2{
+    font-size: 2.2rem;
+    padding-left: 150px;
+}
+.item span {
+    padding-left: 150px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+
+.formContainer {
     height: 100%;
-    object-fit:fill;
+    flex: 1;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+
+.phoneSvg {
+    stroke: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.contact form {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 30px;
+}
+
+.contact input,
+.contact textarea {
+    font-size: 1rem;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid orange;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.contact button{
+    padding: 20px;
+    border: none;
+    background-color: orange;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
 }

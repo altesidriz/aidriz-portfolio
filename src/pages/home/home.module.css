@@ -114,11 +114,11 @@
     .container{
         height: calc(100vh - 100px);
         flex-direction: column;
+        overflow-y: scroll;
     }
 
 
     .avatar {
-        flex: 0.7;
         width: 100%;
         display: flex;
         align-items: center;
@@ -155,10 +155,9 @@
     }
 
     .text {
-        flex: 1.3;
+        height: 700px;
         width: 100%;
-        align-items: center;
-        justify-content: space-around;
+        flex-direction: column;
     }
 
     .title {
@@ -168,6 +167,13 @@
     .desc{
         font-size: 0.8rem;
         line-height: 1.5;
+    }
+    .buttons{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
     }
     .buttons button{
         padding: 5px 10px;

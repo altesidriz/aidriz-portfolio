@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './home.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import pdf from './Resume.pdf'
 
+
 const Home = () => {
+
+  const handleCvClick = () => {
+    window.open(pdf, '_blank'); // Open PDF in a new tab/window
+  };
+  
   return (
     <div className={styles.container}>
       {/* AVATAR */}
@@ -36,7 +42,7 @@ const Home = () => {
       <div className={styles.buttons}>
         <button><Link to="/portfolio">Wiev My Work</Link></button>
         <button><Link to="/contact">Contact Me</Link></button>
-        <button><Link to={pdf}>Check My CV</Link></button>
+        <button onClick={handleCvClick}>Check My CV</button>
       </div>
       </div>
     </div>

@@ -107,10 +107,43 @@
     border: 1px solid #ffa500;
 }
 
+.pdfViewer {
+    width: 90%; /* Adjust as needed */
+    max-width: 800px; /* Adjust as needed */
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+  }
+  
+  .pdfViewer canvas {
+    width: 100%; /* Make the canvas fill the container */
+    display: block; /* Remove any extra spacing */
+  }
+  
+  /* Optional: Add some padding and background for better visual separation */
+  .pdfViewer > div {
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Optional: Style the page numbers or other elements */
+  .pdfViewer p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .pdfViewer {
+      width: 95%; /* Adjust for smaller screens */
+    }
+  }
+
 
 /* Responsive Media Queries */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .container{
         height: calc(100vh - 100px);
         flex-direction: column;
@@ -171,7 +204,7 @@
     .buttons{
         height: 150px;
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
         justify-content: space-between;
     }

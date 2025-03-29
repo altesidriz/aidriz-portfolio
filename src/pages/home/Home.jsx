@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './home.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import pdf from './Resume.pdf'
+import pdf from '/Resume.pdf';
 
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
   const handleCvClick = () => {
     window.open(pdf, '_blank'); // Open PDF in a new tab/window
   };
-  
+
   return (
     <div className={styles.container}>
       {/* AVATAR */}

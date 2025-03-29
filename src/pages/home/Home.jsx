@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './home.module.css';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import pdf from '/Resume.pdf';
+import { storage, ref, getDownloadURL } from '../../firebase/firebase.js';
 
 
 const Home = () => {
 
-  const handleCvClick = () => {
-    window.open(pdf, '_blank'); // Open PDF in a new tab/window
-  };
+  const handleCvClick = async () => {
+    try {
+        const pdfRef = ref(storage, 'portfolio/ResumeCV.pdf'); // Adjust the path in storage
+        const pdfUrl = await getDownloadURL(pdfRef);
+        window.open(pdfUrl, '_blank');
+    } catch (error) {
+        console.error('Error getting PDF URL:', error);
+        // Handle error (e.g., show an error message to the user)
+    }
+};
 
   return (
     <div className={styles.container}>

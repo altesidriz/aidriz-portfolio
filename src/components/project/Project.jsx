@@ -24,7 +24,7 @@ const Project = ({item}) => {
         <div className={styles.description}>
           <h2>{item.title}</h2>
           <p>{item.desc}</p>
-          <button><a href='https://www.bnscloud.shop/'>See Demo</a></button>
+          <button><a href={item.link}>See Demo</a></button>
         </div>
       </div>
   )

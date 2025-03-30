@@ -5,7 +5,7 @@ const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API,
   authDomain: import.meta.env.VITE_AUTH_DOMAIN,
   projectId: import.meta.env.VITE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_BUCKET,
+  storageBucket: "images-6e809.appspot.com",
   messagingSenderId: import.meta.env.VITE_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };

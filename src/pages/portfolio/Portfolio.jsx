@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './portfolio.module.css';
 import Project from '../../components/project/Project';
 
@@ -6,9 +5,9 @@ const items = [
   {
     id: 1,
     title: "Booking Application",
-    img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FbookingScreen.png?alt=media&token=674e0bed-1abc-4e86-9ff8-69100596cdf3",
+    img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FbookingScreen.png?alt=media&token=5ee404ca-e598-4824-ba1d-1f2dca1d1520",
     desc: "A website application where you can rent a property for your stays or vacation",
-    link: '#'
+    link: 'https://booking.idrizaltes.tech/'
   },
   {
     id: 2,
@@ -28,7 +27,7 @@ const items = [
     id: 4,
     title: "Music App",
     img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FplayScreen.png?alt=media&token=a5eb900f-327e-4b54-8673-7fb9c5487c01",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
+    desc: "Music and video player application where you can listen to your favorite music and watch videos",
     link: '#'
   },
 ];

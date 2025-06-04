@@ -18,17 +18,17 @@ const items = [
   },
   {
     id: 3,
-    title: "VroomVend App",
+    title: "Car Rent Application",
     img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FcarScreen.png?alt=media&token=5cf4506b-c544-4dd1-b5e4-d6cf807611ac",
     desc: "Website Application where ou can find cars check prices and contact with offerer. Also you can be an offerer and upload your own car to sell it.",
     link: '#'
   },
   {
     id: 4,
-    title: "Music App",
-    img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FplayScreen.png?alt=media&token=a5eb900f-327e-4b54-8673-7fb9c5487c01",
+    title: "Video Sharing Application",
+    img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FvideoApp.png?alt=media&token=fd8f7843-0f42-4fcc-8a0c-1112c9345fd2",
     desc: "Music and video player application where you can listen to your favorite music and watch videos",
-    link: '#'
+    link: 'https://video.idrizaltes.tech/'
   },
 ];
 

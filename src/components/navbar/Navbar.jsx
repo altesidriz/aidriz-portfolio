@@ -7,10 +7,10 @@ import { link } from 'framer-motion/client';
 
 
 const links = [
-    { url: "/", title: "Home" },
-    { url: "/about", title: "About" },
-    { url: "/portfolio", title: "Portfolio" },
-    { url: "/contact", title: "Contact" },
+    { id: '1aab', url: "/", title: "Home" },
+    { id: '2bbc', url: "/about", title: "About" },
+    { id: '3ccd', url: "/portfolio", title: "Portfolio" },
+    { id: '4dde', url: "/contact", title: "Contact" },
 ];
 
 
@@ -77,7 +77,7 @@ const Navbar = () => {
             {/* LINKS */}
             <div className={styles.links}>
                 {links.map((link) => (
-                    <a href={link.url}
+                    <a href={link.url} key={link.id}
                     className={path === link.url ? styles.active : ''}
                     >{link.title}</a>
                 ))}
@@ -120,7 +120,7 @@ const Navbar = () => {
                 animate="opened"
                 className={styles.responsiveMenu}>
                 {links.map((link) => (
-                    <motion.div variants={listItemVariants}
+                    <motion.div variants={listItemVariants} key={link.id}
                     onClick={() => setOpen((prev) => !prev)}
                     >
                         <Link to={link.url}>{link.title}</Link>

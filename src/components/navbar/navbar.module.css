@@ -91,7 +91,7 @@
     justify-content: right;
     padding-right:15px;
     cursor: pointer;
-    z-index: 90;
+    z-index: 3;
 }
 
 .button{

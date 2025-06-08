@@ -18,15 +18,16 @@
     column-gap: 0.5rem;
 }
 
-.textContainer h1{
+.textContainer h1 {
     font-size: 3.6rem;
     padding-left: 150px;
 }
 
-.item h2{
+.item h2 {
     font-size: 2.2rem;
     padding-left: 150px;
 }
+
 .item span {
     padding-left: 150px;
     font-size: 1.2rem;
@@ -75,7 +76,7 @@
     border-radius: 5px;
 }
 
-.contact button{
+.contact button {
     padding: 20px;
     border: none;
     background-color: orange;
@@ -102,23 +103,24 @@
         justify-content: center;
         row-gap: 0.5rem;
     }
-    
-    .textContainer h1{
+
+    .textContainer h1 {
         font-size: 1.6rem;
         padding-left: 0;
     }
-    
-    .item h2{
+
+    .item h2 {
         font-size: 1.2rem;
         padding-left: 0;
     }
+
     .item span {
         font-size: 1rem;
         font-weight: 300;
         padding-left: 0;
     }
-       
-    
+
+
     .formContainer {
         width: 70%;
         flex: 3;
@@ -126,7 +128,7 @@
         align-items: start;
         justify-content: center;
     }
-    
+
     .phoneSvg {
         stroke: orange;
         position: absolute;
@@ -144,7 +146,7 @@
         justify-content: center;
         row-gap: 10px;
     }
-    
+
     .contact input,
     .contact textarea {
         font-size: 1rem;
@@ -153,13 +155,22 @@
         border: 1px solid orange;
         color: rgb(0, 0, 0);
         border-radius: 5px;
+        transition: border-width 0.2s ease, border-color 0.2s ease;
+    }
+
+    .contact input:focus,
+    .contact textarea:focus {
+        outline: none;
+        border-color: darkorange;
+        border-width: 2px;
     }
 
     .contact textarea {
         height: 100px;
+        resize: none;
     }
-    
-    .contact button{
+
+    .contact button {
         padding: 10px;
         border: none;
         border-radius: 15px;
@@ -167,6 +178,7 @@
         cursor: pointer;
         font-weight: 500;
         font-size: 1rem;
+        color: #000000;
     }
-   
+
 }

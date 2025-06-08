@@ -92,6 +92,7 @@
         align-items: center;
         justify-content: center;
         row-gap: 0.5rem;
+        padding: 0.5rem 0;
     }
 
     .textContainer {
@@ -152,6 +153,10 @@
         border: 1px solid orange;
         color: rgb(0, 0, 0);
         border-radius: 5px;
+    }
+
+    .contact textarea {
+        height: 100px;
     }
     
     .contact button{

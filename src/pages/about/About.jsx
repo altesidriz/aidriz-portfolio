@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import styles from './about.module.css'
 
-const skills = ['Javascript', 'TypeScript', 'React.js', 'Next.js', 'SCSS', 'Tailwind CSS', 'MongoDB', 'PostgreSQL', 'Node.js', 'Express.js', 'GraphQL', 'Redux', 'Framer Motion', 'Vite', 'Firebase', 'Git']
+const skills = ['Javascript', 'TypeScript', 'React.js', 'Next.js', 'SCSS', 'Tailwind CSS', 'MongoDB', 'MySQL', 'Node.js', 'Express.js', 'Redux', 'Framer Motion', 'Vite', 'Firebase', 'Git', 'Jenkins', 'Docker', 'Docker Compose']
 
 const About = () => {
   return (

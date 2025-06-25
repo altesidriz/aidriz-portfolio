@@ -47,7 +47,7 @@ const Home = () => {
           </p>
       {/* Buttons */}
       <div className={styles.buttons}>
-        <button><Link to="/portfolio">Wiev My Work</Link></button>
+        <button><Link to="/portfolio">View My Work</Link></button>
         <button><Link to="/contact">Contact Me</Link></button>
         <button onClick={handleCvClick}>Check My CV</button>
       </div>

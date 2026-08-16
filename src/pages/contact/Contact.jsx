@@ -116,7 +116,7 @@ const Contact = () => {
           <input type="text" required placeholder="Name" name="name" />
           <input type="email" required placeholder="Email" name="email" />
           <textarea rows={8} placeholder="Message" name="message" />
-          <button>{loading ? "Please wait..." : "Send"}</button>
+          <button disabled={loading}>{loading ? "Please wait..." : "Send"}</button>
           {error && "Something went wrong please try again"}
           {success && "Email was sent successfully"}
         </motion.form>

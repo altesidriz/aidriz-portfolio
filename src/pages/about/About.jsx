@@ -1,8 +1,57 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import styles from './about.module.css'
+import styles from './about.module.css';
 
-const skills = ['Javascript', 'TypeScript', 'React.js', 'Next.js', 'SCSS', 'Tailwind CSS', 'MongoDB', 'MySQL', 'Node.js', 'Express.js', 'Redux', 'Framer Motion', 'Vite', 'Firebase', 'Git', 'Jenkins', 'Docker', 'Docker Compose']
+const skills = [
+  'Javascript', 'TypeScript', 'React.js', 'Next.js', 'SCSS', 'Tailwind CSS',
+  'MongoDB', 'MySQL', 'Node.js', 'Express.js', 'Redux', 'Framer Motion',
+  'Vite', 'Firebase', 'Git', 'Jenkins', 'Docker', 'Docker Compose'
+];
+
+const experiences = [
+  {
+    title: 'Full-Stack Developer',
+    desc: 'Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational MySQL, PostgreSQL and non-relational databases MongoDB. State management using Redux, data fetching with React Query. Familiar with testing tools Jest, Cypress and version control Git.',
+    date: 'Present',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'React JS',
+    desc: 'Developing Single Page Applications using ReactJS technology. Writing with JSX syntax, handling requests and Promises, routing, form validation, styling components using techniques like CSS Modules and Styled Components. React Hooks, Context API. Unit testing with JEST.',
+    date: '2021 - 2022',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'Javascript Back End',
+    desc: 'The development of server-side JavaScript applications on the Node.js platform, using Express.js as a framework. Server-client architecture and data-driven web applications with Node.js, Express.js, and MongoDB. Working with MongoDB-Mongoose library. Building REST APIs using Express.js and MongoDB.',
+    date: '2021 - 2022',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'HTML and CSS',
+    desc: 'Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content-HTML and the language for styling web content-CSS.',
+    date: '2020 - 2021',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'Javascript Applications',
+    desc: 'HTTP requests, REST services, Backend as a Service "BaaS", asynchronous code "Promises, use of async/await", templating, and routing. Creating a Single Page Application.',
+    date: '2020 - 2021',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'JavaScript Advanced',
+    desc: 'Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming OOP approaches in JavaScript, inheritance, object composition, prototype chains and etc.',
+    date: '2020 - 2021',
+    company: 'Software University - Sofia',
+  },
+  {
+    title: 'C# Basics and Web Design',
+    desc: 'Starting my education in PU-Plovdiv and building basic knowledge about C#, further studying about OOP programming.',
+    date: '2019 - 2020',
+    company: 'Plovdiv University - Plovdiv',
+  },
+];
 
 const About = () => {
   return (
@@ -15,23 +64,30 @@ const About = () => {
       {/* BIOGRAPHY CONTAINER */}
       <div className={styles.bioContainer}>
         <div className={styles.image}>
-          <img src="./photo.jpg" alt="" />
+          <img src="./photo.jpg" alt="Profile" />
         </div>
         <h1>BIOGRAPHY</h1>
-        <p>I was born in Bulgaria and began my academic journey at UACEG University in Sofia, where I studied civil engineering from 2008 to 2015. In 2019, I decided to pivot towards the tech world and started studying coding at PU-Plovdiv. However, I took a break from my studies there to focus on mastering JavaScript more quickly at SoftUni Sofia, where I graduated as a full-stack developer with skills in JavaScript, React, MongoDB, and Node.js.</p>
+        <p>
+          I was born in Bulgaria and began my academic journey at UACEG University in Sofia, where I studied civil engineering from 2008 to 2015. In 2019, I decided to pivot towards the tech world and started studying coding at PU-Plovdiv. However, I took a break from my studies there to focus on mastering JavaScript more quickly at SoftUni Sofia, where I graduated as a full-stack developer with skills in JavaScript, React, MongoDB, and Node.js.
+        </p>
         <br />
-        <span>Outside of my professional interests, I love staying active. In the summers, I spend a lot of time swimming, and in the autumns, I enjoy hiking. I also like to unwind with some gaming whenever I get the chance.</span>
+        <span>
+          Outside of my professional interests, I love staying active. In the summers, I spend a lot of time swimming, and in the autumns, I enjoy hiking. I also like to unwind with some gaming whenever I get the chance.
+        </span>
       </div>
 
       {/* SKILLS CONTAINER */}
       <div className={styles.skills}>
         <h1>SKILLS</h1>
         <div className={styles.skillCont}>
-          {skills.map((skill, i) => (<div className={styles.skill} key={i}>
-            {skill}
-          </div>))}
+          {skills.map((skill) => (
+            <div className={styles.skill} key={skill}>
+              {skill}
+            </div>
+          ))}
         </div>
       </div>
+
       {/* SCROLL SVG */}
       <motion.svg
         initial={{ opacity: 0.2, y: 0 }}
@@ -55,431 +111,68 @@ const About = () => {
           strokeWidth="1"
         ></path>
       </motion.svg>
-      {/* EXPERIENCE CONTAINER */}
+
+      {/* EXPERIENCE CONTAINER (DESKTOP) */}
       <div className={styles.expContainer}>
         <h1>EXPERIENCE</h1>
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Full-Stack Developer
+        {experiences.map((exp, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <div className={styles.experience} key={exp.title}>
+              {/* LEFT */}
+              <div className={styles.left}>
+                {isEven && (
+                  <>
+                    <div className={styles.jobTitle}>{exp.title}</div>
+                    <div className={styles.jobDesc}>{exp.desc}</div>
+                    <div className={styles.jobdate}>{exp.date}</div>
+                    <div className={styles.jobCompany}>{exp.company}</div>
+                  </>
+                )}
+              </div>
+              {/* MID */}
+              <div className={styles.mid}>
+                <div className={styles.seprLine}>
+                  <div className={styles.seprCircle}></div>
+                </div>
+              </div>
+              {/* RIGHT */}
+              <div className={styles.right}>
+                {!isEven && (
+                  <>
+                    <div className={styles.jobTitle}>{exp.title}</div>
+                    <div className={styles.jobDesc}>{exp.desc}</div>
+                    <div className={styles.jobdate}>{exp.date}</div>
+                    <div className={styles.jobCompany}>{exp.company}</div>
+                  </>
+                )}
+              </div>
             </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational MySQL, PostgreSQL and non-relational databases MongoDB. State management using Redux, data fetching with React Query. Familiar with testing tools Jest, Cypress and version control Git.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              Present
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              React JS
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Developing Single Page Applications using ReactJS technology. Writing with JSX syntax, handling requests and Promises,routing, form validation,styling components using techniques like CSS Modules and Styled Components. React Hooks, Context API.Unit testing withJEST
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2021 - 2022
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Javascript Back End
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              The development of server-side JavaScript applications on the Node.js platform, using Express.js as a framework. Server-client architecture and data-driven web applications with Node.js, Express.js, and MongoDB. Working with MongoDB-Mongoose library. Building REST APIs using Express.js and MongoDB.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2021 - 2022
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              HTML and CSS
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content-HTML and the language for styling web content-CSS.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Javascript Applications
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              HTTP requests, REST services, Backend as a Service &lsquo;BaaS&rsquo;, asynchronous code &lsquo;Promises, use of async/await&rsquo;, templating, and routing. Creating a Single Page Application.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              JavaScript Advanced
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming OOP approaches in JavaScript, inheritance, object composition, prototype chains and etc.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              C# Basics and Web Design
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Starting my education in PU-Plovdiv and building basic knowledge about C#, further studiing about OOP programing.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2019 - 2020
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Plovdiv Univeristy - Plovdiv
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-          {/* RIGHT */}
-          <div className={styles.right}>
-
-          </div>
-        </div>
+          );
+        })}
       </div>
 
-
-
-      {/* RESPONSIVE TEXT */}
+      {/* RESPONSIVE EXPERIENCE CONTAINER */}
       <div className={styles.resExperience}>
         <h1>EXPERIENCE</h1>
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Full-Stack Developer
+        {experiences.map((exp) => (
+          <div className={styles.experience} key={`res-${exp.title}`}>
+            <div className={styles.left}>
+              <div className={styles.jobTitle}>{exp.title}</div>
+              <div className={styles.jobDesc}>{exp.desc}</div>
+              <div className={styles.jobdate}>{exp.date}</div>
+              <div className={styles.jobCompany}>{exp.company}</div>
             </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Experienced in building dynamic web applications with React and Next.js on the frontend. Backend expertise in Node.js and Express, with a focus on creating scalable APIs. Proficient in both relational MySQL, PostgreSQL and non-relational databases MongoDB. State management using Redux, data fetching with React Query. Familiar with testing tools Jest, Cypress and version control Git.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              Present
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
+            <div className={styles.mid}>
+              <div className={styles.seprLine}>
+                <div className={styles.seprCircle}></div>
+              </div>
             </div>
           </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* RIGHT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              React JS
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Developing Single Page Applications using ReactJS technology. Writing with JSX syntax, handling requests and Promises,routing, form validation,styling components using techniques like CSS Modules and Styled Components. React Hooks, Context API.Unit testing withJEST
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2021 - 2022
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Javascript Back End
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              The development of server-side JavaScript applications on the Node.js platform, using Express.js as a framework. Server-client architecture and data-driven web applications with Node.js, Express.js, and MongoDB. Working with MongoDB-Mongoose library. Building REST APIs using Express.js and MongoDB.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2021 - 2022
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* RIGHT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              HTML and CSS
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Knowledge of HTML5 and CSS3 for web development, web browsers, tools for HTML/CSS/DOM development, and practical skills in using the language for describing web content-HTML and the language for styling web content-CSS.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              Javascript Applications
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              HTTP requests, REST services, Backend as a Service &lsquo;BaaS&rsquo;, asynchronous code &lsquo;Promises, use of async/await&rsquo;, templating, and routing. Creating a Single Page Application.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.experience}>
-          {/* RIGHT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              JavaScript Advanced
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Working with the DOM tree, manipulations on it, and handling events. Functional and Object-Oriented Programming OOP approaches in JavaScript, inheritance, object composition, prototype chains and etc.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2020 - 2021
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Software University - Sofia
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.experience}>
-          {/* LEFT */}
-          <div className={styles.left}>
-            {/* JOB TITLE */}
-            <div className={styles.jobTitle}>
-              C# Basics and Web Design
-            </div>
-            {/* JOB DESC */}
-            <div className={styles.jobDesc}>
-              Starting my education in PU-Plovdiv and building basic knowledge about C#, further studiing about OOP programing.
-            </div>
-            {/* JOB DATE */}
-            <div className={styles.jobdate}>
-              2019 - 2020
-            </div>
-            {/* JOB COMPANY */}
-            <div className={styles.jobCompany}>
-              Plovdiv Univeristy - Plovdiv
-            </div>
-          </div>
-          {/* MID */}
-          <div className={styles.mid}>
-            <div className={styles.seprLine}>
-              <div className={styles.seprCircle}></div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-    </motion.div >
-  )
-}
+    </motion.div>
+  );
+};
 
-export default About
+export default About;

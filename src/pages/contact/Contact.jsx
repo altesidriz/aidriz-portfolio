@@ -28,29 +28,35 @@ const Contact = () => {
   const isInView = useInView(ref, { margin: "-100px" });
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true)
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_PUBLIC_SERVICE_ID,
-        import.meta.env.VITE_PUBLIC_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_PUBLIC_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          setSuccess(true)
-          setLoading(false)
-          formRef.current.reset();
-          setTimeout(() => {
-            setSuccess(false);
-          }, 3000);
-        },
-        (error) => {
-          setError(true);
-        }
-      );
-  };
+  e.preventDefault();
+  setLoading(true);
+  setError(false);
+
+  emailjs
+    .sendForm(
+      import.meta.env.VITE_PUBLIC_SERVICE_ID,
+      import.meta.env.VITE_PUBLIC_TEMPLATE_ID,
+      formRef.current,
+      {
+        publicKey: import.meta.env.VITE_PUBLIC_PUBLIC_KEY,
+      }
+    )
+    .then(
+      (result) => {
+        setSuccess(true);
+        setLoading(false);
+        formRef.current.reset();
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+      },
+      (error) => {
+        console.error("EmailJS Error:", error);
+        setError(true);
+        setLoading(false);
+      }
+    );
+};
 
   return (
     <motion.div

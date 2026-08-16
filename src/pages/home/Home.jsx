@@ -41,7 +41,7 @@ const Home = () => {
           Full Stack Java<span className="text-yellow-500">script</span> Developer
         </h1>
         <p className={styles.desc}>
-          Welcome to my portfolio page! I&apos;m a full-stack developer with a passion for creating efficient and dynamic web applications. Here, you&apos;ll find a showcase of the projects I&apos;ve worked on, each highlighting my skills in JavaScript, React, MongoDB, Node.js and many more.<br />
+          Welcome to my portfolio page! I&apos;m a full-stack developer with a passion for creating efficient and dynamic web applications. Here, you`&apos;`ll find a showcase of the projects I&apos;ve worked on, each highlighting my skills in JavaScript, React, MongoDB, Node.js and many more.<br />
           <span>I hope my work gives you a glimpse into my capabilities, and I look forward to the opportunity to collaborate on future projects!</span>
         </p>
 

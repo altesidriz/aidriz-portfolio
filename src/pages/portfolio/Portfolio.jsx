@@ -7,7 +7,7 @@ const items = [
     title: "Blade and Soul",
     img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FbnsScreen.png?alt=media&token=e4d8e257-fbca-4b8f-9f40-553c98624727",
     desc: "A clone website of one of my favorite games, Blade and Soul, where you can register, upload pictures, comment on the blog page, and purchase in-game items (note: this project is not affiliated with or endorsed by the official Blade & Soul game or NCSOFT). Use email: altes@gmail.com, password: 123456 to test the admin features.",
-    link: 'https://www.bnscloud.shop/'
+    link: 'https://www.bnslive.store/'
   },
   {
     id: 2,

@@ -29,6 +29,13 @@ const items = [
     img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FcarScreen.png?alt=media&token=5cf4506b-c544-4dd1-b5e4-d6cf807611ac",
     desc: "A platform to browse cars, compare prices, and connect with sellers. Users can also list their own vehicles for sale. (Currently under active development.)",
     link: '#'
+  },
+  {
+    id: 5,
+    title: "Blog Site",
+    img: "https://firebasestorage.googleapis.com/v0/b/images-6e809.appspot.com/o/portfolio%2FcarScreen.png?alt=media&token=5cf4506b-c544-4dd1-b5e4-d6cf807611ac",
+    desc: "A information blog site where you can read information and historical articles about Banya Bashi Mosque in Sofia. (Currently under active development.)",
+    link: 'https://sm.aidriz.xyz/'
   }
 ];
 
